@@ -13,21 +13,23 @@ npm install blissify
 
 ## usage
 
-1. create templates (default `.html` extensions) using [bliss](https://github.com/cstivers78/bliss/wiki)
+create templates (default `.html` extensions) using [bliss](https://github.com/cstivers78/bliss/wiki)
 
 ```
 @!(name)
 <h1>Hello @name!</h1>
 ```
 
-2. require and use those templates in your view (backbone) or controller (spine)
+require and use those templates in your view (backbone) or controller (spine)
+
 ```
 var template = require('./templates/template.html');
 
 $('body').html(template({name: 'Nali'}));
 ```
 
-3. in your `bundler.js` use blissify as a transform
+in your `bundler.js` use blissify as a transform
+
 ```
 var browserify = require('browserify');
 var blissify = require('blissify');
@@ -42,7 +44,8 @@ var stream = bundler.bundle();
 out.write(stream);
 ```
 
-4. bundle it up
+bundle it up
+
 ```
 node bundle
 ```
