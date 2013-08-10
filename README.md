@@ -13,7 +13,7 @@ npm install blissify
 
 ## usage
 
-create templates (default `.html` extensions) using [bliss](https://github.com/cstivers78/bliss/wiki)
+create templates using [bliss](https://github.com/cstivers78/bliss/wiki); by default blissify transforms `.html` files
 
 ```
 @!(name)
@@ -48,6 +48,12 @@ bundle it up
 
 ```
 node bundle
+```
+
+**note** you can pass a custom extension to blissify:
+
+```
+bundler.transform(blissify('.bliss'));
 ```
 
 
