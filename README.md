@@ -47,7 +47,7 @@ out.write(stream);
 bundle it up
 
 ```
-node bundle
+node bundler
 ```
 
 **pro tip:** you can pass a custom extension to blissify
