@@ -35,7 +35,7 @@ var browserify = require('browserify');
 var blissify = require('blissify');
 
 var b = browserify();
-b.add('/entryIndex.js');
+b.add('/view.js');
 b.transform(blissify());
 
 b.bundle().pipe(process.stdout);
