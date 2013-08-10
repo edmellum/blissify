@@ -1,0 +1,28 @@
+{
+  "name": "blissify",
+  "version": "0.0.1",
+  "description": "a browserify v2 plugin for bliss",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bliss": "1.0.1",
+    "through": "2.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agilemd/blissify"
+  },
+  "keywords": [
+    "blissy",
+    "browserify"
+  ],
+  "author": "AgileMD <hello@agilemd.com>",
+  "contributors": [
+    "jden <jden jason@denizac.org>",
+    "kurttheviking <kurt@agilemd.com>"
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
