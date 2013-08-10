@@ -33,21 +33,18 @@ in your `bundler.js` use blissify as a transform
 ```
 var browserify = require('browserify');
 var blissify = require('blissify');
-var fs = require('fs');
-var path = require('path');
 
-var bundler = browserify('/index.js');
-bundler.transform(blissify());
+var b = browserify();
+b.add('/entryIndex.js');
+b.transform(blissify());
 
-var out = fs.createWriteStream(path.resolve(__dirname, 'bundle.js'));
-var stream = bundler.bundle();
-out.write(stream);
+b.bundle().pipe(process.stdout);
 ```
 
 bundle it up
 
 ```
-node bundle
+node bundler
 ```
 
 **pro tip:** you can pass a custom extension to blissify
