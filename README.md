@@ -50,7 +50,7 @@ bundle it up
 node bundle
 ```
 
-**note** you can pass a custom extension to blissify:
+**pro tip:** you can pass a custom extension to blissify:
 
 ```
 bundler.transform(blissify('.bliss'));
