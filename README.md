@@ -23,7 +23,7 @@ create templates using [bliss](https://github.com/cstivers78/bliss/wiki); by def
 require and use those templates in your view (backbone) or controller (spine)
 
 ```
-var template = require('./templates/template.html');
+var template = require('template.html');
 
 $('body').html(template({name: 'Nali'}));
 ```
@@ -35,7 +35,7 @@ var browserify = require('browserify');
 var blissify = require('blissify');
 
 var b = browserify();
-b.add('/view.js');
+b.add('view.js');
 b.transform(blissify());
 
 b.bundle().pipe(process.stdout);
