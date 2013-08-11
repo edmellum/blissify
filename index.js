@@ -28,7 +28,6 @@ module.exports = function (extension) {
 
     function end() {
       var fn = function(){};
-      console.log('[blissify] compiling', file);
 
       try {
         fn = bliss.compile(src);
