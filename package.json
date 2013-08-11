@@ -1,6 +1,6 @@
 {
   "name": "blissify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a browserify v2 plugin for bliss",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   ],
   "author": "AgileMD <hello@agilemd.com>",
   "contributors": [
-    "jden <jden jason@denizac.org>",
+    "jden <jason@denizac.org>",
     "agilekurt <kurt@agilemd.com>"
   ],
   "license": "MIT",
