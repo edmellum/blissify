@@ -53,6 +53,26 @@ node bundler
 bundler.transform(blissify('.bliss'));
 ```
 
+## debug
+
+to set the compiler in debug mode, set `verbose=true` when instatiating blissify
+
+```
+var blissify = require('blissify');
+blissify.verbose = true;
+```
+
+when enabled, debug mode will `console.error` whenever a parse error occurs. this is super helpful if you're using [watchify](https://github.com/substack/watchify).
+
+the log will look like:
+
+```
+[blissify] error: <badTemplate.html>
+<errorStackTrace>
+```
+
+(note that when in debug mode, an error is not passed to the `through` stream.)
+
 
 ## tests
 

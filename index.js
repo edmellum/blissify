@@ -33,8 +33,11 @@ module.exports = function (extension) {
         fn = bliss.compile(src);
       } catch (e) {
         if (module.exports.verbose) {
-          console.error('[blissify] error:', file, e);
+          console.error('[blissify] error:', file);
+          console.error(e);
+          return;
         }
+
         stream.emit('error', e);
       }
 
