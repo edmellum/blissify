@@ -28,6 +28,18 @@ var template = require('template.html');
 $('body').html(template({name: 'Nali'}));
 ```
 
+install blissify locally to your project
+
+```
+npm install blissify
+```
+
+use it as Browserify transform module with `-t`
+
+```
+browserify -t blissify main.js > bundle.js
+```
+
 in your `bundler.js` use blissify as a transform
 
 ```
@@ -36,7 +48,7 @@ var blissify = require('blissify');
 
 var b = browserify();
 b.add('view.js');
-b.transform(blissify());
+b.transform(blissify);
 
 b.bundle().pipe(process.stdout);
 ```
@@ -47,10 +59,10 @@ bundle it up
 node bundler
 ```
 
-**pro tip:** you can pass a custom extension to blissify
+**pro tip:** you can configure a custom extension for blissify
 
 ```
-bundler.transform(blissify('.bliss'));
+bundler.transform(blissify.configure('.bliss'));
 ```
 
 ## debug

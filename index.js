@@ -6,43 +6,49 @@ var through = require('through');
 
 bliss = new bliss();
 
+var extension = '.html';
+
 function endsWith (str, suffix){
   return str.substr(str.length-suffix.length) === suffix;
 }
 
-module.exports = function (extension) {
-  extension = extension || '.html';
+function blissify (file) {
+  if (!endsWith(file, extension)) {
+    return through();
+  }
 
-  return function blissify (file) {
-    if (!endsWith(file, extension)) {
-      return through();
-    }
+  var src = '';
+  var stream = through(write, end);
+  return through(write, end);
 
-    var src = '';
-    var stream = through(write, end);
-    return through(write, end);
+  function write (buffer) {
+    src += buffer;
+  }
 
-    function write (buffer) {
-      src += buffer;
-    }
+  function end() {
+    var fn = function(){};
 
-    function end() {
-      var fn = function(){};
-
-      try {
-        fn = bliss.compile(src);
-      } catch (e) {
-        if (module.exports.verbose) {
-          console.error('[blissify] error:', file);
-          console.error(e);
-          return;
-        }
-
-        stream.emit('error', e);
+    try {
+      fn = bliss.compile(src);
+    } catch (e) {
+      if (blissify.verbose) {
+        console.error('[blissify] error:', file);
+        console.error(e);
+        return;
       }
 
-      this.queue('module.exports=' + fn.toString());
-      this.queue(null);
+      stream.emit('error', e);
     }
-  };
+
+    this.queue('module.exports=' + fn.toString());
+    this.queue(null);
+  }
 };
+
+blissify.configure = function(ext) {
+  if(ext) extension = ext;
+
+  return blissify;
+};
+
+module.exports = blissify;
